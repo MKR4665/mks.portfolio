@@ -1,0 +1,609 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dynamic developer portfolio.">
+  <title>Portfolio CMS</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="assets/css/site.css">
+  <style>:root{--primary:#076588}</style>
+</head>
+<body class="">
+  <div id="loader" class="loader"><span></span></div>
+  <div class="page-shell">
+    <header class="site-header">
+  <a class="brand" href="#top">Portfolio CMS</a>
+  <nav id="navLinks">
+          <a href="#about">About</a>          <a href="#skills">Skills</a>          <a href="#projects">Projects</a>          <a href="#team">Team</a>          <a href="#experience">Journey</a>          <a href="#testimonials">Reviews</a>          <a href="#contact">Contact</a>      </nav>
+  <div class="header-actions">
+    <!-- Admin panel is PHP/MySQL only and is not included in this static frontend export. -->
+    <button id="themeToggle" class="icon-btn" type="button" aria-label="Toggle theme"><span></span></button>
+    <button id="menuToggle" class="menu-btn" type="button" aria-label="Toggle menu"><i></i><i></i><i></i></button>
+  </div>
+</header>
+
+    <main id="app">
+      <section class="hero-grid page-section">
+        <div class="reveal">
+          <p class="pill">Available for projects</p>
+          <h1>Mantu Kumar Singh</h1>
+          <h2>I build <span id="typing" data-roles="Web Developer|Frontend Interfaces|Admin Dashboards"></span></h2>
+          <p class="lead">I create fast, responsive portfolio websites, business pages and admin dashboards with a clean visual system and secure backend controls.</p>
+          <div class="flex flex-wrap gap-3 mt-8">
+            <a class="btn-primary" href="#contact">Hire Me</a>
+            <a class="btn-secondary" href="#projects">View Projects</a>
+          </div>
+                    <div class="hero-social-row" aria-label="Social links">
+                        <a href="https://github.com/" target="_blank" rel="noopener" aria-label="GitHub" style="--social-delay: 0ms"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4 4 0 0 0-1-3c3 0 6-2 6-6a5 5 0 0 0-1-4 4 4 0 0 0 0-3s-1 0-3 1a11 11 0 0 0-6 0C8 2 7 2 7 2a4 4 0 0 0 0 3 5 5 0 0 0-1 4c0 4 3 6 6 6a4 4 0 0 0-1 3v4"/><path d="M9 18c-4 2-4-2-6-2"/></svg><span>GitHub</span></a>
+                        <a href="https://linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn" style="--social-delay: 80ms"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6Z"/><path d="M2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg><span>LinkedIn</span></a>
+                      </div>
+                    <div class="counter-row">
+            <article><strong data-count="5">0</strong><span>Total Projects</span></article>
+            <article><strong data-count="2">0</strong><span>Years Experience</span></article>
+          </div>
+        </div>
+        <div class="hero-art reveal parallax" aria-label="Hero banner slider">
+          <div class="hero-showcase" data-hero-slider>
+            <div class="hero-window-dots"><i></i><i></i><i></i></div>
+            <div class="hero-slide-stack">
+                                          <article class="hero-slide active">
+                <img src="uploads/hero/cdc52a7f8ab326d6eeafa6c483ada5c0.jpeg" alt="Developer workspace" loading="eager">
+                <div>
+                  <strong>Developer workspace</strong>
+                  <span>Dynamic banner managed from the admin panel.</span>
+                </div>
+              </article>
+                            <article class="hero-slide ">
+                <img src="uploads/hero/dd0fd887948dbd29a8bbd83eec2569c2.jpeg" alt="Project showcase" loading="lazy">
+                <div>
+                  <strong>Project showcase</strong>
+                  <span>Upload your own image and this banner rotates automatically.</span>
+                </div>
+              </article>
+                                        </div>
+            <div class="hero-slide-dots" data-hero-dots aria-label="Hero slide position">
+                            <button type="button" class="active" data-slide-index="0" aria-label="Show slide 1"></button>
+                            <button type="button" class="" data-slide-index="1" aria-label="Show slide 2"></button>
+                          </div>
+            <div class="hero-progress" aria-hidden="true"><span></span></div>
+            <div class="hero-showcase-card"></div>
+          </div>
+          <div class="float-chip chip-one">5 Projects</div>
+          <div class="float-chip chip-two">5 Skills</div>
+        </div>
+      </section>
+
+            <section id="about" class="section-card about-layout reveal page-section">
+        <div class="about-profile reveal">
+          <div class="about-photo">
+            <img src="uploads/profile/fcdc89af7c99e63621d7251af7950676.jpeg" alt="Mantu Kumar Singh" loading="lazy">
+          </div>
+          <div class="about-mini-grid">
+                        <article><span>Email</span><strong>amantusingh4429@gmail.com</strong></article>                        <article><span>Location</span><strong>Remote / India</strong></article>                      </div>
+        </div>
+
+        <div class="about-main">
+          <p class="section-kicker">About</p>
+          <h2>Focused on clean, useful web experiences.</h2>
+          <div class="about-role-line">
+            <strong>Mantu Kumar Singh</strong>
+            <span data-about-typing data-role="Web Developer"></span>
+          </div>
+          <p class="about-intro">Add your about content from the admin panel. This section is fully dynamic and safely escaped.</p>
+
+          
+           
+
+          <div class="about-stats">
+                        <article><strong data-count="5">0</strong><span>Projects completed</span></article>
+                        <article><strong data-count="2">0</strong><span>Years experience</span></article>
+                        <article><strong data-count="5">0</strong><span>Technologies learned</span></article>
+                        <article><strong data-count="0">0</strong><span>GitHub repositories</span></article>
+                      </div>
+
+                    <div class="about-story">
+            <span>Story</span>
+            <p>Started with basic HTML and CSS, learned JavaScript for interactivity, moved into PHP and MySQL for backend systems, then built real-world projects focused on security, speed and clean user experience.</p>
+          </div>
+          
+          <div class="about-actions">
+            <a class="btn-primary" href="#contact">Hire Me</a>
+            <a class="btn-secondary" href="assets/images/placeholder.svg" download>Download Resume</a>          </div>
+
+                    <div class="social-row">
+            <a href="https://github.com/" target="_blank" rel="noopener" aria-label="GitHub" style="--social-delay: 0ms"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4 4 0 0 0-1-3c3 0 6-2 6-6a5 5 0 0 0-1-4 4 4 0 0 0 0-3s-1 0-3 1a11 11 0 0 0-6 0C8 2 7 2 7 2a4 4 0 0 0 0 3 5 5 0 0 0-1 4c0 4 3 6 6 6a4 4 0 0 0-1 3v4"/><path d="M9 18c-4 2-4-2-6-2"/></svg><span>GitHub</span></a><a href="https://linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn" style="--social-delay: 80ms"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6Z"/><path d="M2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg><span>LinkedIn</span></a>          </div>
+                  </div>
+      </section>
+      
+            <section id="skills" class="section-card skills-showcase reveal page-section">
+        <div class="skills-head">
+          <div>
+            <p class="section-kicker">Skills</p>
+            <h2>Technical toolkit</h2>
+            <p>A practical stack shaped around fast interfaces, clean backend workflows and maintainable content systems.</p>
+          </div>
+          <div class="skills-summary" aria-label="Skills summary">
+            <article><strong data-count="5">0</strong><span>Total skills</span></article>
+            <article><strong data-count="5">0</strong><span>Categories</span></article>
+          </div>
+        </div>
+        <div class="skill-grid">
+                              <article class="skill-card" style="--skill-delay: 0ms">
+            <div class="skill-orbit" data-skill-ring data-value="94" style="--value:0">
+              <span>HTM</span>
+            </div>
+            <div class="skill-copy">
+              <h3>HTML</h3>
+              <p>Structure</p>
+            </div>
+            <div class="skill-meter">
+              <span data-skill-percent data-value="94">0%</span>
+              <i></i>
+            </div>
+          </article>
+                              <article class="skill-card" style="--skill-delay: 45ms">
+            <div class="skill-orbit" data-skill-ring data-value="90" style="--value:0">
+              <span>TAI</span>
+            </div>
+            <div class="skill-copy">
+              <h3>Tailwind CSS</h3>
+              <p>Design System</p>
+            </div>
+            <div class="skill-meter">
+              <span data-skill-percent data-value="90">0%</span>
+              <i></i>
+            </div>
+          </article>
+                              <article class="skill-card" style="--skill-delay: 90ms">
+            <div class="skill-orbit" data-skill-ring data-value="86" style="--value:0">
+              <span>JAV</span>
+            </div>
+            <div class="skill-copy">
+              <h3>JavaScript</h3>
+              <p>Interactions</p>
+            </div>
+            <div class="skill-meter">
+              <span data-skill-percent data-value="86">0%</span>
+              <i></i>
+            </div>
+          </article>
+                              <article class="skill-card" style="--skill-delay: 135ms">
+            <div class="skill-orbit" data-skill-ring data-value="82" style="--value:0">
+              <span>COR</span>
+            </div>
+            <div class="skill-copy">
+              <h3>Core PHP</h3>
+              <p>Backend</p>
+            </div>
+            <div class="skill-meter">
+              <span data-skill-percent data-value="82">0%</span>
+              <i></i>
+            </div>
+          </article>
+                              <article class="skill-card" style="--skill-delay: 180ms">
+            <div class="skill-orbit" data-skill-ring data-value="78" style="--value:0">
+              <span>MYS</span>
+            </div>
+            <div class="skill-copy">
+              <h3>MySQL</h3>
+              <p>Database</p>
+            </div>
+            <div class="skill-meter">
+              <span data-skill-percent data-value="78">0%</span>
+              <i></i>
+            </div>
+          </article>
+                  </div>
+      </section>
+      
+            <section id="projects" class="section-card projects-board reveal page-section">
+        <aside class="project-rail" id="projectFilters" aria-label="Project filters">
+          <button class="active" data-filter="All">All</button>
+                    <button data-filter="Web">We</button>
+                    <button data-filter="App">Ap</button>
+                    <button data-filter="UI">UI</button>
+                  </aside>
+        <div class="project-panel">
+          <div class="section-head">
+            <div>
+              <p class="section-kicker">Projects</p>
+              <h2>Selected dynamic work</h2>
+              <p>Live portfolio projects pulled from the CMS, with media, stack, category and links managed from the admin panel.</p>
+            </div>
+            <div class="section-stat"><strong data-project-count>5</strong><span>Showing</span></div>
+          </div>
+          <div class="project-grid" id="projectGrid">
+                                    <article class="project-card" data-category="Web" style="--item-delay: 0ms">
+              <div class="project-showcase-split">
+                <div class="project-status-badge">
+                  <span class="status-lbl">BUILD COMPLETE</span>
+                  <div class="status-text">Modern &amp; Responsive Web</div>
+                  <div class="status-sub">in <span class="accent-text">Web Stack</span></div>
+                  <div class="status-icons">
+                                        <span>WEB</span>
+                                        <span>APP</span>
+                                      </div>
+                </div>
+                <div class="project-media-preview">
+                  <img src="assets/images/placeholder.svg" alt="ERP" loading="lazy">
+                </div>
+              </div>
+              <div class="project-info-panel">
+                <h3>ERP</h3>
+                                <div class="project-uploaded-at">
+                  <time datetime="2026-06-02 17:59:43">
+                    <span>Jun 2, 2026</span>
+                    <b>5:59 PM</b>
+                  </time>
+                </div>
+                                <p>html css</p>
+                <div class="tag-row">
+                                  </div>
+                <div class="project-links-row">
+                                                    </div>
+              </div>
+            </article>
+                                    <article class="project-card" data-category="Web" style="--item-delay: 55ms">
+              <div class="project-showcase-split">
+                <div class="project-status-badge">
+                  <span class="status-lbl">BUILD COMPLETE</span>
+                  <div class="status-text">Modern &amp; Responsive Web</div>
+                  <div class="status-sub">in <span class="accent-text">Web Stack</span></div>
+                  <div class="status-icons">
+                                        <span>WEB</span>
+                                        <span>APP</span>
+                                      </div>
+                </div>
+                <div class="project-media-preview">
+                  <img src="assets/images/placeholder.svg" alt="ERP" loading="lazy">
+                </div>
+              </div>
+              <div class="project-info-panel">
+                <h3>ERP</h3>
+                                <div class="project-uploaded-at">
+                  <time datetime="2026-06-02 14:42:09">
+                    <span>Jun 2, 2026</span>
+                    <b>2:42 PM</b>
+                  </time>
+                </div>
+                                <p>html css</p>
+                <div class="tag-row">
+                                  </div>
+                <div class="project-links-row">
+                                                    </div>
+              </div>
+            </article>
+                                    <article class="project-card" data-category="Web" style="--item-delay: 110ms">
+              <div class="project-showcase-split">
+                <div class="project-status-badge">
+                  <span class="status-lbl">BUILD COMPLETE</span>
+                  <div class="status-text">Modern &amp; Responsive Web</div>
+                  <div class="status-sub">in <span class="accent-text">HTML</span></div>
+                  <div class="status-icons">
+                                        <span>HTML</span>
+                                        <span>CSS</span>
+                                      </div>
+                </div>
+                <div class="project-media-preview">
+                  <img src="assets/images/placeholder.svg" alt="Insight Dashboard" loading="lazy">
+                </div>
+              </div>
+              <div class="project-info-panel">
+                <h3>Insight Dashboard</h3>
+                                <div class="project-uploaded-at">
+                  <time datetime="2026-06-01 13:23:22">
+                    <span>Jun 1, 2026</span>
+                    <b>1:23 PM</b>
+                  </time>
+                </div>
+                                <p>A responsive analytics interface with filters, cards and clean reporting panels.</p>
+                <div class="tag-row">
+                                    <span>HTML</span>
+                                    <span>Tailwind</span>
+                                    <span>JavaScript</span>
+                                  </div>
+                <div class="project-links-row">
+                                    <a class="lnk-source" href="https://github.com/" target="_blank" rel="noopener">Code</a>
+                                                      <a class="lnk-live" href="https://example.com/" target="_blank" rel="noopener">Live Demo</a>
+                                  </div>
+              </div>
+            </article>
+                                    <article class="project-card" data-category="App" style="--item-delay: 165ms">
+              <div class="project-showcase-split">
+                <div class="project-status-badge">
+                  <span class="status-lbl">BUILD COMPLETE</span>
+                  <div class="status-text">Modern &amp; Responsive App</div>
+                  <div class="status-sub">in <span class="accent-text">PHP</span></div>
+                  <div class="status-icons">
+                                        <span>PHP</span>
+                                        <span>SQL</span>
+                                      </div>
+                </div>
+                <div class="project-media-preview">
+                  <img src="assets/images/placeholder.svg" alt="Booking Manager" loading="lazy">
+                </div>
+              </div>
+              <div class="project-info-panel">
+                <h3>Booking Manager</h3>
+                                <div class="project-uploaded-at">
+                  <time datetime="2026-06-01 13:23:22">
+                    <span>Jun 1, 2026</span>
+                    <b>1:23 PM</b>
+                  </time>
+                </div>
+                                <p>A compact scheduling and client-management tool with admin-friendly controls.</p>
+                <div class="tag-row">
+                                    <span>PHP</span>
+                                    <span>MySQL</span>
+                                    <span>AJAX</span>
+                                  </div>
+                <div class="project-links-row">
+                                    <a class="lnk-source" href="https://github.com/" target="_blank" rel="noopener">Code</a>
+                                                      <a class="lnk-live" href="https://example.com/" target="_blank" rel="noopener">Live Demo</a>
+                                  </div>
+              </div>
+            </article>
+                                    <article class="project-card" data-category="UI" style="--item-delay: 220ms">
+              <div class="project-showcase-split">
+                <div class="project-status-badge">
+                  <span class="status-lbl">BUILD COMPLETE</span>
+                  <div class="status-text">Modern &amp; Responsive UI</div>
+                  <div class="status-sub">in <span class="accent-text">Tailwind</span></div>
+                  <div class="status-icons">
+                                        <span>CSS</span>
+                                        <span>CSS</span>
+                                      </div>
+                </div>
+                <div class="project-media-preview">
+                  <img src="assets/images/placeholder.svg" alt="Brand UI Kit" loading="lazy">
+                </div>
+              </div>
+              <div class="project-info-panel">
+                <h3>Brand UI Kit</h3>
+                                <div class="project-uploaded-at">
+                  <time datetime="2026-06-01 13:23:22">
+                    <span>Jun 1, 2026</span>
+                    <b>1:23 PM</b>
+                  </time>
+                </div>
+                                <p>A lightweight component system for forms, cards, navigation and content sections.</p>
+                <div class="tag-row">
+                                    <span>Tailwind</span>
+                                    <span>CSS</span>
+                                    <span>JavaScript</span>
+                                  </div>
+                <div class="project-links-row">
+                                    <a class="lnk-source" href="https://github.com/" target="_blank" rel="noopener">Code</a>
+                                                      <a class="lnk-live" href="https://example.com/" target="_blank" rel="noopener">Live Demo</a>
+                                  </div>
+              </div>
+            </article>
+                      </div>
+        </div>
+      </section>
+      
+            <section id="team" class="section-card team-board reveal page-section">
+        <div class="section-head team-head">
+          <div>
+            <p class="section-kicker">Team</p>
+            <h2>Our Team</h2>
+            <p>People behind the work, shaped as a clean dynamic section you can update from the admin panel.</p>
+          </div>
+          <div class="section-stat"><strong data-count="4">0</strong><span>Members</span></div>
+        </div>
+        <div class="team-grid" data-team-grid>
+                              <article class="team-card" style="--team-delay: 0ms">
+            <div class="team-photo">
+              <img src="assets/images/placeholder.svg" alt="Product Lead" loading="lazy">
+              <span>P</span>
+            </div>
+            <div class="team-card-copy">
+              <h3>Product Lead</h3>
+              <p>Planning &amp; Direction</p>
+              <small>Designs the user journey and keeps each portfolio section clear, useful and easy to maintain.</small>            </div>
+          </article>
+                              <article class="team-card" style="--team-delay: 70ms">
+            <div class="team-photo">
+              <img src="assets/images/placeholder.svg" alt="Frontend Developer" loading="lazy">
+              <span>F</span>
+            </div>
+            <div class="team-card-copy">
+              <h3>Frontend Developer</h3>
+              <p>Interface Engineering</p>
+              <small>Builds responsive interfaces, polished interactions and fast public pages.</small>            </div>
+          </article>
+                              <article class="team-card" style="--team-delay: 140ms">
+            <div class="team-photo">
+              <img src="assets/images/placeholder.svg" alt="Backend Developer" loading="lazy">
+              <span>B</span>
+            </div>
+            <div class="team-card-copy">
+              <h3>Backend Developer</h3>
+              <p>CMS &amp; Security</p>
+              <small>Manages CMS workflows, secure forms, uploads and reliable database logic.</small>            </div>
+          </article>
+                              <article class="team-card" style="--team-delay: 210ms">
+            <div class="team-photo">
+              <img src="assets/images/placeholder.svg" alt="Content Strategist" loading="lazy">
+              <span>C</span>
+            </div>
+            <div class="team-card-copy">
+              <h3>Content Strategist</h3>
+              <p>Portfolio Copy</p>
+              <small>Shapes project stories, profile copy and section updates for a cleaner presentation.</small>            </div>
+          </article>
+                  </div>
+      </section>
+      
+            <section id="experience" class="section-card journey-board reveal page-section">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Journey</p>
+            <h2>Experience &amp; Education</h2>
+            <p>A compact record of project practice, education and growth, updated from the admin panel.</p>
+          </div>
+          <div class="section-stat"><strong data-count="3">0</strong><span>Milestones</span></div>
+        </div>
+        <div class="journey-lanes">
+                    <article class="journey-lane" data-journey-lane>
+            <div class="lane-title"><span>Ex</span><h3>Experience</h3></div>
+            <div class="journey-track" data-journey-track>
+                            <div class="journey-item" style="--item-delay: 0ms">
+                <time>2025 - Present</time>
+                <i aria-hidden="true"></i>
+                <div>
+                  <strong>Independent Work</strong>
+                  <h4>Frontend Projects</h4>
+                  <p>Built responsive websites, admin panels and reusable UI sections.</p>
+                </div>
+              </div>
+                          </div>
+          </article>
+                    <article class="journey-lane" data-journey-lane>
+            <div class="lane-title"><span>Ed</span><h3>Education</h3></div>
+            <div class="journey-track" data-journey-track>
+                            <div class="journey-item" style="--item-delay: 0ms">
+                <time>2020 - 2024</time>
+                <i aria-hidden="true"></i>
+                <div>
+                  <strong>CENTURION UNIVERSITY OF TECHNOLOGY AND MANAGEMENT  ODISHA, PARALAKHEMUNDI</strong>
+                  <h4>B.Tech(Computer Science)	</h4>
+                  <p></p>
+                </div>
+              </div>
+                            <div class="journey-item" style="--item-delay: 110ms">
+                <time>2017 - 2019</time>
+                <i aria-hidden="true"></i>
+                <div>
+                  <strong>+2 CO-Operative High School Jagdishpur, Siwan</strong>
+                  <h4>10+2 Intermediate </h4>
+                  <p></p>
+                </div>
+              </div>
+                          </div>
+          </article>
+                  </div>
+      </section>
+      
+            <section id="testimonials" class="section-card testimonial-board reveal page-section">
+        <aside class="testimonial-intro">
+          <span class="quote-mark" aria-hidden="true">"</span>
+          <p class="section-kicker">Testimonials</p>
+          <h2>Client feedback</h2>
+          <p>Short notes from people who have worked with this portfolio system and delivery process.</p>
+          <div class="testimonial-controls" aria-label="Testimonial controls">
+            <button type="button" data-testimonial-prev aria-label="Previous testimonial">‹</button>
+            <button type="button" data-testimonial-next aria-label="Next testimonial">›</button>
+          </div>
+        </aside>
+        <div class="testimonial-stage" id="testimonialSlider" data-testimonial-slider>
+          <div class="testimonial-track" data-testimonial-track>
+                                    <article class="testimonial-card active" style="--testimonial-delay: 0ms">
+              <div class="testimonial-avatar">
+                <img src="assets/images/placeholder.svg" alt="Meera Singh" loading="lazy">
+                <span>M</span>
+              </div>
+              <p>Clear communication, clean UI and a smooth delivery process.</p>
+              <div>
+                <strong>Meera Singh</strong>
+                <span>Product Lead</span>
+              </div>
+            </article>
+                                    <article class="testimonial-card " style="--testimonial-delay: 80ms">
+              <div class="testimonial-avatar">
+                <img src="assets/images/placeholder.svg" alt="Aarav Sharma" loading="lazy">
+                <span>A</span>
+              </div>
+              <p>The website felt fast, polished and easy to manage from the admin panel.</p>
+              <div>
+                <strong>Aarav Sharma</strong>
+                <span>Startup Founder</span>
+              </div>
+            </article>
+                      </div>
+          <div class="testimonial-dots" data-testimonial-dots>
+                        <button type="button" class="active" data-testimonial-dot="0" aria-label="Show testimonial 1"></button>
+                        <button type="button" class="" data-testimonial-dot="1" aria-label="Show testimonial 2"></button>
+                      </div>
+        </div>
+      </section>
+      
+            <section id="contact" class="section-card contact-panel reveal page-section">
+        <div class="contact-map-stack">
+          <div class="contact-map-card">
+            <iframe title="Remote / India" src="https://www.openstreetmap.org/export/embed.html?mlat=20.5937&amp;mlon=78.9629&amp;zoom=13&amp;layer=mapnik&amp;marker=20.5937%2C78.9629" loading="lazy"></iframe>
+            <div class="map-marker" aria-hidden="true"><span></span></div>
+          </div>
+        </div>
+        <form id="contactForm" class="contact-form" data-api-endpoint="/api/contact.php">
+          <!-- Converted from PHP CSRF/database form to a static frontend fetch() submission. -->
+          <input type="hidden" name="visitor_latitude" data-visitor-lat>
+          <input type="hidden" name="visitor_longitude" data-visitor-lng>
+          <input type="hidden" name="visitor_accuracy" data-visitor-accuracy>
+          <div class="field-row"><input name="name" placeholder="Your name" required minlength="2"><input type="email" name="email" placeholder="Your email" required></div>
+          <input name="subject" placeholder="Subject" required>
+          <textarea name="message" placeholder="Message" rows="5" required minlength="10"></textarea>
+          <div class="contact-form-foot">
+            <span data-location-status>Location sharing is optional.</span>
+            <button class="btn-primary" type="submit">Send Message</button>
+          </div>
+          <p id="formStatus" class="form-status"></p>
+        </form>
+      </section>
+          </main>
+
+    <footer class="site-footer">
+  <div class="footer-shell">
+    <section class="footer-brand-block">
+      <a class="footer-brand" href="#top">
+        <span>P</span>
+        <strong>Portfolio</strong>
+      </a>
+      <h2>Building useful digital work.</h2>
+      <p>A dynamic portfolio CMS with responsive pages, secure admin controls and content you can update anytime.</p>
+            <div class="footer-socials" aria-label="Social links">
+                <a href="https://github.com/" target="_blank" rel="noopener" aria-label="GitHub" style="--footer-delay: 0ms"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4 4 0 0 0-1-3c3 0 6-2 6-6a5 5 0 0 0-1-4 4 4 0 0 0 0-3s-1 0-3 1a11 11 0 0 0-6 0C8 2 7 2 7 2a4 4 0 0 0 0 3 5 5 0 0 0-1 4c0 4 3 6 6 6a4 4 0 0 0-1 3v4"/><path d="M9 18c-4 2-4-2-6-2"/></svg></a>
+                <a href="https://linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn" style="--footer-delay: 70ms"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6Z"/><path d="M2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+              </div>
+          </section>
+
+    <section class="footer-column">
+      <h3>Explore</h3>
+      <nav aria-label="Footer navigation">
+                  <a href="#about">About</a>                  <a href="#skills">Skills</a>                  <a href="#projects">Projects</a>                  <a href="#team">Team</a>                  <a href="#experience">Journey</a>                  <a href="#testimonials">Reviews</a>                  <a href="#contact">Contact</a>              </nav>
+    </section>
+
+    <section class="footer-column">
+      <h3>Focus</h3>
+      <nav aria-label="Footer focus areas">
+        <a href="#projects">Structure</a><a href="#projects">Design System</a><a href="#projects">Interactions</a><a href="#projects">Backend</a><a href="#projects">Database</a>      </nav>
+    </section>
+
+    <section class="footer-column footer-contact">
+      <h3>Contact</h3>
+            <div>
+        <span>Email</span>
+        <strong>amantusingh4429@gmail.com</strong>
+      </div>
+            <div>
+        <span>Location</span>
+        <strong>Remote / India</strong>
+      </div>
+            <div>
+        <span>Role</span>
+        <strong>Web Developer</strong>
+      </div>
+          </section>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 Portfolio CMS. All rights reserved.</p>
+    <a href="#top">Back to top</a>
+  </div>
+</footer>
+  </div>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/site.js"></script>
+</body>
+</html>
+
