@@ -89,9 +89,15 @@ themeToggle?.addEventListener("click", () => {
   localStorage.setItem("theme", body.classList.contains("dark") ? "dark" : "light");
 });
 
-menuToggle?.addEventListener("click", () => navLinks?.classList.toggle("open"));
+menuToggle?.addEventListener("click", () => {
+  navLinks?.classList.toggle("open");
+  body.classList.toggle("nav-open", navLinks?.classList.contains("open"));
+});
 navLinks?.addEventListener("click", (event) => {
-  if (event.target.matches("a")) navLinks.classList.remove("open");
+  if (event.target.matches("a")) {
+    navLinks.classList.remove("open");
+    body.classList.remove("nav-open");
+  }
 });
 
 const roles = (document.querySelector("#typing")?.dataset.roles || "").split("|").filter(Boolean);

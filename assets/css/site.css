@@ -26,6 +26,7 @@ body.dark {
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
+html { scroll-padding-top: 104px; }
 body {
   min-width: 0;
   margin: 0;
@@ -35,7 +36,9 @@ body {
     radial-gradient(circle at var(--mx) var(--my), color-mix(in srgb, var(--primary) 18%, transparent), transparent 22rem),
     linear-gradient(135deg, #f7fbff 0%, var(--bg) 48%, #eef5ff 100%);
   overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
 }
+body.nav-open { overflow: hidden; }
 body.dark {
   background:
     radial-gradient(circle at var(--mx) var(--my), color-mix(in srgb, var(--primary) 18%, transparent), transparent 24rem),
@@ -46,6 +49,11 @@ a { color: inherit; text-decoration: none; }
 button, input, textarea, select { font: inherit; }
 button { cursor: pointer; }
 img { display: block; max-width: 100%; }
+
+.flex { display: flex; }
+.flex-wrap { flex-wrap: wrap; }
+.gap-3 { gap: 0.75rem; }
+.mt-8 { margin-top: 2rem; }
 
 .page-shell {
   width: min(1220px, calc(100% - 32px));
@@ -2194,4 +2202,191 @@ select:focus {
   .journey-item > div { padding: 14px; }
   .btn-primary,
   .btn-secondary { width: 100%; }
+}
+
+@media (max-width: 760px) {
+  html { scroll-padding-top: 86px; }
+  body { background-attachment: scroll; }
+  .page-shell { width: min(100% - 18px, 1220px); }
+  .site-header {
+    top: 8px;
+    min-height: 58px;
+    margin: 8px 0 18px;
+    padding: 0 10px;
+    gap: 8px;
+  }
+  .brand { font-size: .95rem; }
+  .header-actions { gap: 7px; }
+  .icon-btn,
+  .menu-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 12px;
+  }
+  .site-header nav {
+    top: 72px;
+    max-height: min(68dvh, 430px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .site-header nav a {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+  .hero-grid,
+  .section-card,
+  .content-card,
+  .contact-panel {
+    margin-bottom: 16px;
+    border-radius: 20px;
+  }
+  .hero-grid {
+    padding: 18px;
+    gap: 18px;
+  }
+  .hero-grid h1 {
+    font-size: clamp(2.1rem, 11vw, 3.25rem);
+    line-height: 1.05;
+  }
+  .hero-grid h2 {
+    min-height: 34px;
+    font-size: 1.18rem;
+  }
+  .lead,
+  .about-intro,
+  .about-story p,
+  .skills-head p,
+  .section-head p,
+  .project-card p,
+  .journey-item p {
+    line-height: 1.62;
+    font-size: .94rem;
+  }
+  .hero-art {
+    gap: 10px;
+    place-items: stretch;
+  }
+  .hero-showcase {
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto;
+    aspect-ratio: .95;
+    padding: 14px;
+    border-radius: 22px;
+  }
+  .hero-slide-stack { inset: 48px 14px 14px; }
+  .hero-showcase-card { right: 10px; width: 56px; height: 56px; border-radius: 15px; }
+  .float-chip {
+    position: static;
+    justify-self: stretch;
+    text-align: center;
+    padding: 11px 12px;
+    border-radius: 14px;
+  }
+  .about-layout,
+  .skills-showcase,
+  .projects-board,
+  .journey-board,
+  .testimonial-board,
+  .contact-panel,
+  .content-card {
+    padding: 16px;
+  }
+  .about-main,
+  .about-profile,
+  .contact-form,
+  .testimonial-intro,
+  .project-panel {
+    border-radius: 18px;
+  }
+  .section-copy h2,
+  .about-main h2,
+  .content-card h2,
+  .contact-panel h2,
+  .skills-head h2,
+  .section-head h2,
+  .testimonial-intro h2 {
+    font-size: clamp(1.65rem, 8vw, 2.35rem);
+    line-height: 1.1;
+  }
+  .project-card {
+    border-radius: 18px;
+    transform: none !important;
+  }
+  .project-card:hover { transform: translateY(-2px) !important; }
+  .project-info-panel,
+  .project-status-badge {
+    padding: 14px;
+  }
+  .tag-row span,
+  .project-links-row a {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+  .testimonial-stage { overflow: visible; }
+  .testimonial-track { overflow: visible; }
+  input,
+  select,
+  textarea {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  html { scroll-padding-top: 78px; }
+  .page-shell { width: min(100% - 14px, 1220px); }
+  .site-header { border-radius: 16px; }
+  .hero-grid,
+  .section-card,
+  .content-card,
+  .contact-panel {
+    border-radius: 18px;
+  }
+  .hero-grid,
+  .about-layout,
+  .skills-showcase,
+  .projects-board,
+  .journey-board,
+  .testimonial-board,
+  .contact-panel,
+  .content-card {
+    padding: 13px;
+  }
+  .hero-grid h1 { font-size: clamp(1.95rem, 12vw, 2.85rem); }
+  .counter-row article,
+  .skills-summary article,
+  .about-stats article,
+  .section-stat {
+    padding: 12px;
+  }
+  .project-rail {
+    padding: 8px;
+    gap: 8px;
+  }
+  .project-rail button {
+    width: 40px;
+    height: 40px;
+  }
+  .journey-track::before,
+  .journey-track::after {
+    display: none;
+  }
+  .journey-item {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .journey-item time {
+    justify-self: start;
+    text-align: left;
+  }
+  .journey-item i { display: none; }
+  .testimonial-card {
+    flex-basis: 100%;
+  }
+  .footer-shell,
+  .footer-bottom {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
 }
