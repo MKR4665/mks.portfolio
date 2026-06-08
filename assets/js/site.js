@@ -1,3 +1,74 @@
+bootPortfolioPage();
+
+async function bootPortfolioPage() {
+  await loadLiveFrontendContent();
+  initPortfolioPage();
+}
+
+async function loadLiveFrontendContent() {
+  const config = window.PORTFOLIO_DATA || {};
+  const backendBaseUrls = [
+    ...(Array.isArray(config.backendBaseUrls) ? config.backendBaseUrls : []),
+    config.backendBaseUrl || ""
+  ]
+    .map((url) => String(url || "").replace(/\/$/, ""))
+    .filter(Boolean)
+    .filter((url, index, urls) => urls.indexOf(url) === index);
+  const endpoint = config.liveContentEndpoint || "/api/frontend-html.php";
+  if (!backendBaseUrls.length) return;
+
+  try {
+    let data = null;
+    let backendBaseUrl = "";
+    for (const candidateUrl of backendBaseUrls) {
+      try {
+        const response = await fetch(`${candidateUrl}${endpoint}`, { cache: "no-store" });
+        if (!response.ok) continue;
+        const candidateData = await response.json();
+        if (!candidateData.ok || !candidateData.html) continue;
+        data = candidateData;
+        backendBaseUrl = candidateUrl;
+        break;
+      } catch (error) {
+        // Try the next configured backend URL.
+      }
+    }
+    if (!data || !backendBaseUrl) return;
+    window.PORTFOLIO_LIVE_BACKEND = backendBaseUrl;
+
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(data.html, "text/html");
+    const liveShell = doc.querySelector(".page-shell");
+    const currentShell = document.querySelector(".page-shell");
+    if (!liveShell || !currentShell) return;
+
+    liveShell.querySelectorAll("img").forEach((image) => {
+      const src = image.getAttribute("src") || "";
+      if (src.startsWith("uploads/")) image.src = `${backendBaseUrl}/${src}`;
+      if (src.startsWith("/uploads/")) image.src = `${backendBaseUrl}${src}`;
+      if (src.startsWith("frontend/assets/")) image.src = src.replace("frontend/assets/", "assets/");
+      if (src.startsWith("/frontend/assets/")) image.src = src.replace("/frontend/assets/", "assets/");
+    });
+    liveShell.querySelectorAll("a[href^='uploads/'], a[href^='/uploads/']").forEach((link) => {
+      const href = link.getAttribute("href") || "";
+      link.href = href.startsWith("/uploads/") ? `${backendBaseUrl}${href}` : `${backendBaseUrl}/${href}`;
+    });
+    liveShell.querySelectorAll("form[data-api-endpoint], #contactForm").forEach((form) => {
+      form.setAttribute("data-api-endpoint", `${backendBaseUrl}/api/contact.php`);
+      form.querySelector('[name="csrf_token"]')?.remove();
+    });
+
+    // Dynamic PHP/MySQL frontend was converted to static HTML; this hydrates it from the live backend.
+    currentShell.replaceWith(liveShell);
+    document.title = doc.title || document.title;
+    const livePrimary = data.primaryColor || doc.querySelector("style")?.textContent?.match(/--primary:([^;}]+)/)?.[1]?.trim();
+    if (livePrimary) document.documentElement.style.setProperty("--primary", livePrimary);
+  } catch (error) {
+    // Static Vercel snapshot remains visible if the backend is offline.
+  }
+}
+
+function initPortfolioPage() {
 const body = document.body;
 const loader = document.querySelector("#loader");
 const themeToggle = document.querySelector("#themeToggle");
@@ -5,7 +76,11 @@ const menuToggle = document.querySelector("#menuToggle");
 const navLinks = document.querySelector("#navLinks");
 const root = document.documentElement;
 
-window.addEventListener("load", () => setTimeout(() => loader?.classList.add("hide"), 350));
+if (document.readyState === "complete") {
+  setTimeout(() => loader?.classList.add("hide"), 350);
+} else {
+  window.addEventListener("load", () => setTimeout(() => loader?.classList.add("hide"), 350));
+}
 
 if (localStorage.getItem("theme") === "dark") body.classList.add("dark");
 if (localStorage.getItem("theme") === "light") body.classList.remove("dark");
@@ -318,6 +393,13 @@ document.addEventListener("pointermove", (event) => {
 
 const contactForm = document.querySelector("#contactForm");
 if (contactForm) {
+  const config = window.PORTFOLIO_DATA || {};
+  const backendBaseUrl = String(window.PORTFOLIO_LIVE_BACKEND || config.backendBaseUrl || "").replace(/\/$/, "");
+  const currentEndpoint = contactForm.dataset.apiEndpoint || "/api/contact.php";
+  if (backendBaseUrl && currentEndpoint.startsWith("/")) {
+    contactForm.dataset.apiEndpoint = `${backendBaseUrl}${currentEndpoint}`;
+  }
+
   const locationStatus = document.querySelector("[data-location-status]");
   const latInput = contactForm.querySelector("[data-visitor-lat]");
   const lngInput = contactForm.querySelector("[data-visitor-lng]");
@@ -362,3 +444,4 @@ contactForm?.addEventListener("submit", async (event) => {
     status.className = "form-status error";
   }
 });
+}
